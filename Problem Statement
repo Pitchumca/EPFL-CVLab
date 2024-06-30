@@ -1,29 +1,31 @@
+Problem Statement
+Title: "Improving Medical Question Pair Similarity Detection using DistilBERT and Transformers"
 Objective:
 
-To develop a deep learning model capable of identifying defects in medical implants using the OpenMaterial dataset. The project aims to improve the accuracy and efficiency of detecting defective materials in medical implants, thereby ensuring higher quality standards in medical devices.
+To develop a machine learning model capable of determining the similarity between pairs of medical questions. This project aims to enhance the accuracy of identifying duplicate questions or semantically similar questions in medical forums, thereby improving user experience and information retrieval.
 Background:
 
-Defective medical implants can lead to severe complications, including device failure and adverse patient outcomes. Traditional methods of defect detection are often time-consuming and prone to human error. By leveraging deep learning techniques, we can automate the defect detection process, enhancing accuracy and reliability.
+Medical forums and Q&A platforms often face the challenge of duplicate or similar questions being asked by different users. Identifying these pairs can help in merging duplicates and providing more comprehensive answers. Traditional methods of text similarity often fail to capture the nuanced language of medical questions. Using advanced transformer models like DistilBERT can significantly improve the performance of such tasks.
 Dataset:
 
-The OpenMaterial dataset from EPFL-CVLab contains images of various materials with different types of defects. For this project, we will focus on images of medical implants and classify them as defective or non-defective.
+The "medical_questions_pairs" dataset from Hugging Face consists of pairs of medical questions and labels indicating whether they are duplicates or not.
 Methodology:
 
     Data Preprocessing:
-        Load and preprocess images from the OpenMaterial dataset.
-        Normalize and resize images for uniformity.
-        Split the dataset into training, validation, and test sets.
+        Load and preprocess the medical question pairs dataset.
+        Tokenize the questions using the DistilBERT tokenizer.
+        Prepare the data for input to the DistilBERT model.
 
     Model Development:
-        Utilize a convolutional neural network (CNN) architecture suitable for image classification.
-        Experiment with pre-trained models such as VGG19 or ResNet50 to leverage transfer learning.
-        Fine-tune the model on the medical implant images to detect defects.
+        Fine-tune a DistilBERT model on the medical question pairs dataset.
+        Use a classification head to determine the similarity between question pairs.
 
     Model Training and Evaluation:
         Train the model on the training dataset.
         Validate the model using the validation dataset to avoid overfitting.
-        Evaluate the model's performance on the test dataset using metrics such as accuracy, precision, recall, and F1-score.
+        Evaluate the model's performance using metrics such as accuracy, precision, recall, and F1-score.
 
     Deployment:
-        Deploy the trained model to a web application for real-time defect detection in medical implants.
-        Provide a user-friendly interface for uploading images and displaying results.
+        Deploy the trained model to a web application for real-time similarity detection of medical question pairs.
+        Provide a user-friendly interface for inputting question pairs and displaying similarity results.
+
